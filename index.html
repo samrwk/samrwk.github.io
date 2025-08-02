@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Khan | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3b82f6',
+                            dark: '#1e40af'
+                        },
+                        secondary: {
+                            light: '#10b981',
+                            dark: '#059669'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .profile-icon {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .dark .project-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-xl font-bold text-primary-light dark:text-primary-dark flex items-center">
+                        <span class="mr-2">Sameer Khan</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Home</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">About</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Projects</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle p-2 rounded-full focus:outline-none">
+                        <i class="fas fa-moon dark:hidden text-gray-700"></i>
+                        <i class="fas fa-sun hidden dark:inline text-yellow-300"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 pb-4 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition py-2">Home</a>
+                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition py-2">About</a>
+                <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition py-2">Skills</a>
+                <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition py-2">Projects</a>
+                <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition py-2">Contact</a>
+                <button id="theme-toggle-mobile" class="theme-toggle text-left py-2 text-gray-700 dark:text-gray-300 flex items-center">
+                    <i class="fas fa-moon dark:hidden mr-2"></i>
+                    <i class="fas fa-sun hidden dark:inline mr-2 text-yellow-300"></i>
+                    <span>Toggle Theme</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-primary-light dark:text-primary-dark">Sameer Khan</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary-light dark:text-secondary-dark">Full Stack Developer</h2>
+                <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">I build exceptional digital experiences with modern technologies.</p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">View My Work</a>
+                    <a href="#contact" class="border border-primary-light dark:border-primary-dark text-primary-light dark:text-primary-dark px-6 py-3 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 rounded-full bg-gradient-to-br from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark flex items-center justify-center overflow-hidden">
+    <img src="https://avatars.githubusercontent.com/u/187181765?v=4" alt="Sameer Khan" class="w-full h-full object-cover">
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-xl mb-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark flex items-center justify-center overflow-hidden">
+    <img src="https://avatars.githubusercontent.com/u/187181765?v=4" alt="Sameer Khan" class="w-full h-full object-cover">
+</div>
+            </div>
+            <div class="md:w-2/3 md:pl-12">
+                <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+                    I'm a passionate Full Stack Developer based in Lucknow, Uttar Pradesh, specializing in building modern web applications. With a strong foundation in both frontend and backend technologies, I create efficient, scalable, and user-friendly solutions.
+                </p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div>
+                        <h3 class="font-semibold text-primary-light dark:text-primary-dark">Name:</h3>
+                        <p>Sameer Khan</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-primary-light dark:text-primary-dark">Email:</h3>
+                        <p>shahsameerkhan69@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-primary-light dark:text-primary-dark">Phone:</h3>
+                        <p>+91 63837838271</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-primary-light dark:text-primary-dark">Location:</h3>
+                        <p>Lucknow, Uttar Pradesh</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/samrwk" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sameer-khan-4b7431217/" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+            <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Frontend Skills -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                        <i class="fas fa-laptop-code text-blue-600 dark:text-blue-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Frontend</h3>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>HTML5 & CSS3</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>JavaScript (ES6+)</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>React.js</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Tailwind CSS</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-full mr-4">
+                        <i class="fas fa-server text-purple-600 dark:text-purple-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Backend</h3>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Node.js</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Express.js</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>MongoDB</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>RESTful APIs</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tools & Others -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full mr-4">
+                        <i class="fas fa-tools text-yellow-600 dark:text-yellow-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Tools</h3>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Git & GitHub</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>VS Code</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Postman</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Figma</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Learning -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                        <i class="fas fa-book-reader text-green-600 dark:text-green-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold">Learning</h3>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-spinner text-blue-500 mr-2 animate-spin"></i>
+                        <span>Next.js</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-spinner text-blue-500 mr-2 animate-spin"></i>
+                        <span>TypeScript</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-spinner text-blue-500 mr-2 animate-spin"></i>
+                        <span>GraphQL</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-spinner text-blue-500 mr-2 animate-spin"></i>
+                        <span>AWS</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+            <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Virtual Library Management</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        A comprehensive digital library system for managing books, users, and transactions with an intuitive interface.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/samrwk" target="_blank" class="text-primary-light dark:text-primary-dark hover:underline">View on GitHub</a>
+                        <span class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 dark:bg-red-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-film text-red-600 dark:text-red-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Netflix Clone</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        A responsive Netflix clone with movie browsing, user authentication, and video playback features.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/samrwk" target="_blank" class="text-primary-light dark:text-primary-dark hover:underline">View on GitHub</a>
+                        <span class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Frontend</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-calculator text-green-600 dark:text-green-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Vibrant Smart Calculator</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        A feature-rich calculator application with scientific functions, history tracking, and customizable themes.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/samrwk" target="_blank" class="text-primary-light dark:text-primary-dark hover:underline">View on GitHub</a>
+                        <span class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Frontend</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 (Additional) -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-utensils text-yellow-600 dark:text-yellow-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Restaurant Finder</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        A location-based application that helps users discover nearby restaurants with reviews and ratings.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline">View on GitHub</a>
+                        <span class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 (Additional) -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-tasks text-purple-600 dark:text-purple-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Task Management List</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        A productivity application for organizing tasks with drag-and-drop functionality and team collaboration.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-primary-light dark:text-primary-dark hover:underline">View on GitHub</a>
+                        <span class="text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center">
+                <div class="p-6 text-center">
+                    <i class="fas fa-plus text-4xl text-gray-400 dark:text-gray-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-500 dark:text-gray-400">More Coming Soon</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <div class="w-20 h-1 bg-primary-light dark:bg-primary-dark mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-primary-light dark:bg-primary-dark p-2 rounded-full mr-4">
+                            <i class="fas fa-envelope text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Email</h4>
+                            <p class="text-gray-600 dark:text-gray-300">shahsameerkhan69@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-light dark:bg-primary-dark p-2 rounded-full mr-4">
+                            <i class="fas fa-phone text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Phone</h4>
+                            <p class="text-gray-600 dark:text-gray-300">+91 63837838271</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-light dark:bg-primary-dark p-2 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Location</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Lucknow, Uttar Pradesh, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/samrwk" target="_blank" class="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                            <i class="fab fa-github text-gray-700 dark:text-gray-300"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sameer-khan-4b7431217/" target="_blank" class="bg-gray-200 dark:bg-gray-700 p-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                            <i class="fab fa-linkedin-in text-gray-700 dark:text-gray-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-white dark:bg-gray-700">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-white dark:bg-gray-700">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-white dark:bg-gray-700">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark bg-white dark:bg-gray-700"></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-700 dark:text-gray-300">&copy; 2023 Sameer Khan. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Home</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">About</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Projects</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=samrwk/my-portfolio-website" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
